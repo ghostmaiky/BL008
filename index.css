@@ -795,6 +795,15 @@ header {
     width: 24px;
 }
 
+.contact-methods a {
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+.contact-methods a:hover {
+    color: var(--primary-light);
+}
+
 /* Contact Form */
 .contact-form-container {
     background: var(--bg-surface);
