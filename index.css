@@ -697,10 +697,10 @@ header {
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
-    height: 72px;
+    height: 96px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
 
