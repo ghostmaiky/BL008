@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แฟ้มสะสมผลงาน (Personal Portfolio) | ณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</title>
+    <meta name="description" content="Online Portfolio แฟ้มสะสมผลงานและแนะนำตัวของ ณัฐพงษ์ ปัดทุมมา (ออมแบงค์) รวบรวมประวัติการศึกษา ทักษะ Skills Bar ผลงานเด่น C# WinForms, IoT Arduino, Web Development สำหรับยื่น TCAS และสมัครงาน">
+    
+    <!-- Google Fonts: Prompt & Kanit for Thai, Outfit & Inter for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="dark-theme">
+    <!-- Background Animated Glow Orbs -->
+    <div class="bg-glow-orb orb-1"></div>
+    <div class="bg-glow-orb orb-2"></div>
+    <div class="bg-glow-orb orb-3"></div>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#hero" class="logo">
+                <span class="logo-accent">&lt;</span>Aombank<span class="logo-accent">/&gt;</span>
+                <span class="logo-badge">TCAS Portfolio</span>
+            </a>
+            
+            <nav class="nav-links" id="nav-menu">
+                <a href="#hero" class="nav-link active"><i class="fas fa-home"></i> หน้าแรก</a>
+                <a href="#about" class="nav-link"><i class="fas fa-user"></i> รวมประวัติ</a>
+                <a href="#skills" class="nav-link"><i class="fas fa-chart-bar"></i> ทักษะ (Skills Bar)</a>
+                <a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> ผลงานที่เคยทำ (Projects Grid)</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> ฟอร์มติดต่อกลับ</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="สลับโหมดมืด/สว่าง" title="สลับโหมดแสดงผล">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="open-resume-btn" class="btn btn-sm btn-outline">
+                    <i class="fas fa-file-invoice"></i> ดูเรซูเม่ TCAS
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="เปิดเมนู">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section-hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-tag-row">
+                    <span class="badge badge-assignment">
+                        <i class="fas fa-book-open"></i> แฟ้มสะสมผลงาน & แนะนำตัว (Personal Portfolio)
+                    </span>
+                    <span class="badge badge-tcas">
+                        <i class="fas fa-graduation-cap"></i> สำหรับสมัครเรียน (TCAS) / สมัครงาน
+                    </span>
+                    <span class="badge badge-glow" id="greeting-badge">
+                        <i class="fas fa-sparkles"></i> ยินดีต้อนรับสู่พอร์ตโฟลิโอ
+                    </span>
+                </div>
+                
+                <h1 class="hero-title">
+                    สวัสดีครับ, ผม <span class="gradient-text">ณัฐพงษ์ ปัดทุมมา</span><br>
+                    <span class="hero-subtext">(ออมแบงค์ • Aombank)</span>
+                </h1>
+                
+                <p class="hero-description">
+                    นักเรียนสาขา <strong>เกมและแอนิเมชัน (Game & Animation)</strong> ผู้หลงใหลในการสร้างสรรค์ผลงานดิจิทัล มีความมุ่งมั่นพัฒนาตนเองด้าน 
+                    <strong>Game Development</strong>, <strong>2D/3D Animation</strong> และ <strong>Digital Art & Web Design</strong> 
+                    พร้อมต่อยอดทักษะสู่ระดับอุดมศึกษาและวงการอุตสาหกรรมเกมและแอนิเมชัน
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> ชมผลงานทั้งหมด
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> ติดต่อฉัน
+                    </a>
+                    <a href="#skills" class="btn btn-glass">
+                        <i class="fas fa-code"></i> ดู Skills Bar
+                    </a>
+                </div>
+
+                <!-- Quick Highlights -->
+                <div class="hero-stats">
+                    <div class="quick-stat">
+                        <span class="stat-value">16</span>
+                        <span class="stat-name">อายุ (ปี)</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="quick-stat">
+                        <span class="stat-value">4+</span>
+                        <span class="stat-name">ผลงานเด่น</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="quick-stat">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-name">ความมุ่งมั่น</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <!-- Floating Code Card -->
+                <div class="floating-card code-card glow-border">
+                    <div class="card-header-bar">
+                        <div class="dots-group">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="card-filename"><i class="fas fa-terminal"></i> StudentProfile.cs</span>
+                    </div>
+                    <div class="code-editor-sim">
+                        <p><span class="code-keyword">public class</span> <span class="code-type">StudentProfile</span></p>
+                        <p>{</p>
+                        <p class="indent-1"><span class="code-keyword">public string</span> Name =&gt; <span class="code-string">"ณัฐพงษ์ ปัดทุมมา"</span>;</p>
+                        <p class="indent-1"><span class="code-keyword">public string</span> Nickname =&gt; <span class="code-string">"ออมแบงค์"</span>;</p>
+                        <p class="indent-1"><span class="code-keyword">public int</span> Age =&gt; <span class="code-number">16</span>;</p>
+                        <p class="indent-1"><span class="code-keyword">public string</span> Major =&gt; <span class="code-string">"เกมและแอนิเมชัน"</span>;</p>
+                        <p class="indent-1"><span class="code-keyword">public string[]</span> Passions =&gt; {</p>
+                        <p class="indent-2"><span class="code-string">"Game Dev"</span>, <span class="code-string">"2D/3D Animation"</span>, <span class="code-string">"Digital Art"</span></p>
+                        <p class="indent-1">};</p>
+                        <p class="indent-1"><span class="code-keyword">public bool</span> ReadyToCreate =&gt; <span class="code-keyword">true</span>;</p>
+                        <p>}</p>
+                    </div>
+                </div>
+
+                <!-- Floating Mini Badge -->
+                <div class="floating-mini-badge badge-top">
+                    <i class="fas fa-gamepad icon-accent"></i>
+                    <div>
+                        <strong>Game Development</strong>
+                        <small>Unity / Game Logic</small>
+                    </div>
+                </div>
+
+                <div class="floating-mini-badge badge-bottom">
+                    <i class="fas fa-paint-brush icon-accent-2"></i>
+                    <div>
+                        <strong>2D/3D Animation</strong>
+                        <small>Digital Art & Design</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-down-indicator">
+            <a href="#about" aria-label="เลื่อนลงดูประวัติส่วนตัว">
+                <span class="scroll-text">สำรวจพอร์ตโฟลิโอ</span>
+                <i class="fas fa-chevron-down scroll-bounce"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section (รวมประวัติ & แนะนำตัว สำหรับ TCAS และสมัครงาน) -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">PERSONAL PROFILE & TCAS</span>
+                <h2 class="section-title">รวมประวัติ & แนะนำตัว</h2>
+                <div class="section-underline"></div>
+                <p class="section-lead">แฟ้มสะสมผลงาน & แนะนำตัว (Personal Portfolio) เหมาะสำหรับนำไปใช้งานจริงในการสมัครเรียน (TCAS) หรือสมัครงาน</p>
+            </div>
+
+            <div class="about-grid">
+                <!-- Left: Profile Image & Personal Cards -->
+                <div class="about-visual">
+                    <div class="profile-card-wrapper">
+                        <div class="profile-image-box">
+                            <img src="profile.jpg" alt="ณัฐพงษ์ ปัดทุมมา (ออมแบงค์)" class="profile-img">
+                            <div class="profile-badge-overlay">
+                                <i class="fas fa-check-circle"></i> กำลังศึกษา & พัฒนาตนเอง
+                            </div>
+                        </div>
+                        <div class="profile-quick-info">
+                            <h3>ณัฐพงษ์ ปัดทุมมา</h3>
+                            <p class="nickname-tag">ชื่อเล่น: ออมแบงค์ (Aombank) • อายุ 16 ปี</p>
+                            <div class="social-pills">
+                                <a href="mailto:6829010001@prcs.ac.th" title="อีเมล"><i class="fas fa-envelope"></i></a>
+                                <a href="https://github.com/Aombank" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#contact" title="ฟอร์มติดต่อ"><i class="fas fa-paper-plane"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Detailed Info & Aspirations -->
+                <div class="about-details">
+                    <div class="bio-intro-box">
+                        <h3 class="bio-title">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            มุ่งมั่นสร้างสรรค์ผลงาน ออกแบบโลกดิจิทัล และพัฒนาตนเองอยู่เสมอ
+                        </h3>
+                        <p class="bio-paragraph">
+                            สวัสดีครับ ผมชื่อ <strong>นายณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</strong> อายุ 16 ปี กำลังศึกษาอยู่ใน<strong>สาขาเกมและแอนิเมชัน (Game & Animation)</strong> มีความหลงใหลในการสร้างสรรค์งานกราฟิก ดิจิทัลอาร์ต การออกแบบตัวละคร และการพัฒนาเกม ชื่นชอบการสตรีมมิงและการสร้างเนื้อหาดิจิทัล
+                        </p>
+                        <p class="bio-paragraph">
+                            ผลงานที่ผมภูมิใจ ได้แก่ งาน <strong>Digital Art & 2D Animation</strong>, การพัฒนา<strong>เว็บไซต์พอร์ตโฟลิโอ</strong>สไตล์ทันสมัย และโปรแกรม<strong>แสดงผลข้อมูลด้วย C# Windows Forms</strong> ซึ่งสะท้อนความสามารถรอบด้านในสายเทคโนโลยีสร้างสรรค์
+                        </p>
+                    </div>
+
+                    <!-- TCAS & Education Cards -->
+                    <div class="education-tcas-cards">
+                        <div class="info-tile">
+                            <div class="tile-icon"><i class="fas fa-university"></i></div>
+                            <div class="tile-content">
+                                <h4>เป้าหมายการศึกษาต่อ (TCAS Target)</h4>
+                                <p>คณะเทคโนโลยีดิจิทัลสื่อสารสร้างสรรค์ / คณะศิลปกรรมศาสตร์ (สาขาเทคโนโลยีการสร้างภาพเคลื่อนไหว, การออกแบบเกม, หรือ ดิจิทัลอาร์ต)</p>
+                            </div>
+                        </div>
+
+                        <div class="info-tile">
+                            <div class="tile-icon"><i class="fas fa-school"></i></div>
+                            <div class="tile-content">
+                                <h4>ประวัติการศึกษา (Education)</h4>
+                                <p>สาขาเกมและแอนิเมชัน (Game & Animation) / วิทยาลัยอาชีวศึกษา PRCS (รหัสนักศึกษา: 6829010001)</p>
+                            </div>
+                        </div>
+
+                        <div class="info-tile">
+                            <div class="tile-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="tile-content">
+                                <h4>ความสนใจพิเศษ (Interests & Hobbies)</h4>
+                                <p>การสร้าง 2D/3D Animation, Game Development, Digital Art & Illustration, เล่นเกม & Live Streaming, Web Design</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Bar -->
+                    <div class="about-actions">
+                        <button class="btn btn-primary" id="about-resume-trigger">
+                            <i class="fas fa-file-pdf"></i> สรุปเรซูเม่ TCAS ฉบับย่อ
+                        </button>
+                        <a href="#skills" class="btn btn-secondary">
+                            <i class="fas fa-arrow-down"></i> ดูทักษะความสามารถ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section (ทักษะแบบ Skills Bar - สำคัญตามโจทย์) -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">ABILITIES & COMPETENCIES</span>
+                <h2 class="section-title">ทักษะความสามารถ (Skills Bar)</h2>
+                <div class="section-underline"></div>
+                <p class="section-lead">ระดับความเชี่ยวชาญในด้านการเขียนโปรแกรม ฮาร์ดแวร์ IoT และเครื่องมือพัฒนาซอฟต์แวร์</p>
+            </div>
+
+            <!-- Skills Categories Grid -->
+            <div class="skills-categories-wrapper">
+                
+                <!-- Category 1: Programming & Software -->
+                <div class="skill-group-card glow-card">
+                    <div class="group-header">
+                        <div class="group-icon-wrapper"><i class="fas fa-laptop-code"></i></div>
+                        <div>
+                            <h3 class="group-title">Software & Programming</h3>
+                            <p class="group-desc">การพัฒนาโปรแกรมคอมพิวเตอร์และเว็บ</p>
+                        </div>
+                    </div>
+
+                    <div class="skills-bars-container">
+                        <!-- Skill 1 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-windows skill-icon"></i> C# .NET / WinForms</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="88" style="--target-width: 88%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: เชี่ยวชาญ (สร้างแอปพลิเคชัน GUI และระบบเชื่อมต่อเซนเซอร์)</span>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-html5 skill-icon"></i> HTML5 & CSS3 Responsive</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="85" style="--target-width: 85%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ชำนาญสูง (ออกแบบหน้าเว็บโมเดิร์น สวยงาม รองรับทุกอุปกรณ์)</span>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-js skill-icon"></i> JavaScript (DOM & Logic)</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="78" style="--target-width: 78%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ปานกลางค่อนข้างสูง (ระบบโต้ตอบ แอนิเมชัน และจัดการข้อมูล)</span>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-database skill-icon"></i> SQL & Database Fundamentals</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="70" style="--target-width: 70%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: พื้นฐานถึงปานกลาง (การจัดเก็บและดึงข้อมูล)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Hardware & IoT -->
+                <div class="skill-group-card glow-card">
+                    <div class="group-header">
+                        <div class="group-icon-wrapper"><i class="fas fa-microchip"></i></div>
+                        <div>
+                            <h3 class="group-title">Hardware & IoT Solutions</h3>
+                            <p class="group-desc">ระบบสมองกลฝังตัวและเซนเซอร์อัจฉริยะ</p>
+                        </div>
+                    </div>
+
+                    <div class="skills-bars-container">
+                        <!-- Skill 1 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-robot skill-icon"></i> Arduino & C/C++ Programming</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="85" style="--target-width: 85%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ชำนาญ (เขียนโค้ดควบคุมบอร์ด และคำนวณค่าสัญญาณ)</span>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-thermometer-half skill-icon"></i> Sensor Interfacing (Temp/DHT/Analog)</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="82" style="--target-width: 82%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ชำนาญ (ต่อวงจรเซนเซอร์วัดอุณหภูมิ และสัญญาณแอนะล็อก)</span>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-exchange-alt skill-icon"></i> Serial & Hardware Communication</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="80" style="--target-width: 80%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ดี (รับส่งข้อมูล Real-time ระหว่างไมโครคอนโทรลเลอร์กับ PC)</span>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-project-diagram skill-icon"></i> Basic Circuit Design & Prototyping</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="75" style="--target-width: 75%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ปานกลาง (ต่อวงจรบน Breadboard และวิเคราะห์การทำงาน)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Tools & Digital Media -->
+                <div class="skill-group-card glow-card">
+                    <div class="group-header">
+                        <div class="group-icon-wrapper"><i class="fas fa-palette"></i></div>
+                        <div>
+                            <h3 class="group-title">Development Tools & Media</h3>
+                            <p class="group-desc">เครื่องมือพัฒนา งานออกแบบ และสื่อดิจิทัล</p>
+                        </div>
+                    </div>
+
+                    <div class="skills-bars-container">
+                        <!-- Skill 1 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-terminal skill-icon"></i> Visual Studio & VS Code IDE</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="90" style="--target-width: 90%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: คล่องแคล่วสูง (การคอมไพล์ ดีบัก และจัดการโปรเจกต์)</span>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-git-alt skill-icon"></i> Git & GitHub Version Control</span>
+                                <span class="skill-percent">76%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="76" style="--target-width: 76%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ปานกลาง (บันทึกโค้ด จัดการ Branch และเผยแพร่เว็บ)</span>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-broadcast-tower skill-icon"></i> Gaming & Live Streaming Setup</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="88" style="--target-width: 88%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ชำนาญสูง (OBS Studio, การตั้งค่าเสียง ภาพ และสตรีมมิง)</span>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-pen-nib skill-icon"></i> Digital Art & UI/UX Styling</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-progress="80" style="--target-width: 80%;"></div>
+                            </div>
+                            <span class="skill-level-text">ระดับ: ดี (วาดภาพดิจิทัล ออกแบบธีม จัดสัดส่วนสีและไอคอน)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Soft Skills & Methodologies Badges -->
+            <div class="soft-skills-container">
+                <h4 class="soft-skills-heading"><i class="fas fa-award"></i> ทักษะเสริม & การทำงานร่วมกับผู้อื่น (Soft Skills)</h4>
+                <div class="soft-pills-list">
+                    <span class="soft-pill"><i class="fas fa-check"></i> ความคิดสร้างสรรค์ (Creativity)</span>
+                    <span class="soft-pill"><i class="fas fa-check"></i> การแก้ไขปัญหาเฉพาะหน้า (Problem Solving)</span>
+                    <span class="soft-pill"><i class="fas fa-check"></i> พร้อมเรียนรู้สิ่งใหม่ตลอดเวลา (Growth Mindset)</span>
+                    <span class="soft-pill"><i class="fas fa-check"></i> ความละเอียดรอบคอบในการเขียนโค้ด (Code Precision)</span>
+                    <span class="soft-pill"><i class="fas fa-check"></i> ความอดทนและความรับผิดชอบต่องาน (Accountability)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (ผลงานที่เคยทำแบบ Projects Grid) -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">PORTFOLIO SHOWCASE</span>
+                <h2 class="section-title">ผลงานที่เคยทำ (Projects Grid)</h2>
+                <div class="section-underline"></div>
+                <p class="section-lead">คลังผลงานจริงด้านโปรแกรมประยุกต์ ระบบ IoT และการพัฒนาเว็บไซต์</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="projects-filter-bar">
+                <button class="filter-btn active" data-filter="all">ทั้งหมด (All)</button>
+                <button class="filter-btn" data-filter="csharp">C# .NET</button>
+                <button class="filter-btn" data-filter="iot">IoT & Arduino</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+                
+                <!-- Project 1: TempMonitor Dashboard -->
+                <div class="project-card glow-card" data-category="csharp">
+                    <div class="project-visual bg-grad-csharp">
+                        <div class="project-visual-content">
+                            <i class="fas fa-chart-line project-hero-icon"></i>
+                            <span class="project-tech-badge">C# WinForms</span>
+                        </div>
+                        <div class="project-status-badge">โปรเจกต์เด่น</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="meta-tag"><i class="fas fa-desktop"></i> Desktop Software</span>
+                            <span class="meta-year">2026</span>
+                        </div>
+                        <h3 class="project-title">Temperature Monitoring Dashboard</h3>
+                        <p class="project-desc">
+                            โปรแกรมแอปพลิเคชันบนเดสก์ท็อปพัฒนาด้วยภาษา C# Windows Forms เพื่อตรวจวัดและติดตามอุณหภูมิแบบเรียลไทม์ เชื่อมต่อกับฮาร์ดแวร์ พร้อมระบบแสดงกราฟิกและบันทึกประวัติข้อมูล
+                        </p>
+                        <div class="tech-stack-tags">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">WinForms</span>
+                            <span class="tech-tag">SerialPort</span>
+                            <span class="tech-tag">Chart Engine</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-project-modal" data-project="temp-monitor">
+                                <i class="fas fa-info-circle"></i> ดูรายละเอียด
+                            </button>
+                            <span class="project-label-tag"><i class="fas fa-check-circle"></i> ใช้งานได้จริง</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Smart IoT Sensor Controller -->
+                <div class="project-card glow-card" data-category="iot">
+                    <div class="project-visual bg-grad-iot">
+                        <div class="project-visual-content">
+                            <i class="fas fa-microchip project-hero-icon"></i>
+                            <span class="project-tech-badge">Arduino / C++</span>
+                        </div>
+                        <div class="project-status-badge">ฮาร์ดแวร์ IoT</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="meta-tag"><i class="fas fa-network-wired"></i> Embedded Systems</span>
+                            <span class="meta-year">2026</span>
+                        </div>
+                        <h3 class="project-title">Smart IoT Sensor Controller</h3>
+                        <p class="project-desc">
+                            โครงงานระบบอ่านและประมวลผลค่าเซนเซอร์อุณหภูมิและความชื้นด้วยบอร์ด Arduino เขียนโปรแกรมภาษา C++ สื่อสารข้อมูลผ่าน Serial Interface อย่างแม่นยำและเสถียร
+                        </p>
+                        <div class="tech-stack-tags">
+                            <span class="tech-tag">Arduino Uno</span>
+                            <span class="tech-tag">C/C++</span>
+                            <span class="tech-tag">Sensors</span>
+                            <span class="tech-tag">Circuitry</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-project-modal" data-project="iot-controller">
+                                <i class="fas fa-info-circle"></i> ดูรายละเอียด
+                            </button>
+                            <span class="project-label-tag"><i class="fas fa-bolt"></i> Real-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Personal Portfolio Web -->
+                <div class="project-card glow-card" data-category="web">
+                    <div class="project-visual bg-grad-web">
+                        <div class="project-visual-content">
+                            <i class="fas fa-laptop-code project-hero-icon"></i>
+                            <span class="project-tech-badge">HTML5 / CSS3 / JS</span>
+                        </div>
+                        <div class="project-status-badge">TCAS Showcase</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="meta-tag"><i class="fas fa-globe"></i> Responsive Web</span>
+                            <span class="meta-year">2026</span>
+                        </div>
+                        <h3 class="project-title">Online Personal Portfolio & TCAS</h3>
+                        <p class="project-desc">
+                            เว็บไซต์แฟ้มสะสมผลงานส่วนตัว ออกแบบตามหลัก Responsive Web Design สไตล์ Glassmorphism ผสานฟอนต์ไทยทันสมัย มี Skills Bar แอนิเมชัน และฟอร์มติดต่อกลับครบถ้วน
+                        </p>
+                        <div class="tech-stack-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">Modern CSS3</span>
+                            <span class="tech-tag">Vanilla JS</span>
+                            <span class="tech-tag">UI/UX</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-project-modal" data-project="web-portfolio">
+                                <i class="fas fa-info-circle"></i> ดูรายละเอียด
+                            </button>
+                            <span class="project-label-tag"><i class="fas fa-mobile-alt"></i> Responsive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Interactive Media & Game Showcase -->
+                <div class="project-card glow-card" data-category="csharp web">
+                    <div class="project-visual bg-grad-game">
+                        <div class="project-visual-content">
+                            <i class="fas fa-gamepad project-hero-icon"></i>
+                            <span class="project-tech-badge">Gaming & Media</span>
+                        </div>
+                        <div class="project-status-badge">มัลติมีเดีย</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="meta-tag"><i class="fas fa-play-circle"></i> Creative Tech</span>
+                            <span class="meta-year">2026</span>
+                        </div>
+                        <h3 class="project-title">Interactive Game & Media Stream Setup</h3>
+                        <p class="project-desc">
+                            การสร้างสรรค์ผลงานด้านเกมมิ่ง การเซ็ตอัพระบบไลฟ์สตรีมมิง การทำดิจิทัลคอนเทนต์ และการออกแบบ Interactive Mini-Game ควบคุมด้วยคีย์บอร์ดและเมาส์
+                        </p>
+                        <div class="tech-stack-tags">
+                            <span class="tech-tag">Game Logic</span>
+                            <span class="tech-tag">OBS Studio</span>
+                            <span class="tech-tag">Digital Art</span>
+                            <span class="tech-tag">Audio/Video</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="btn btn-sm btn-outline open-project-modal" data-project="media-game">
+                                <i class="fas fa-info-circle"></i> ดูรายละเอียด
+                            </button>
+                            <span class="project-label-tag"><i class="fas fa-paint-brush"></i> Creative</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (ฟอร์มติดต่อกลับ - สำคัญตามโจทย์) -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">CONTACT & FEEDBACK</span>
+                <h2 class="section-title">ฟอร์มติดต่อกลับ (Contact Form)</h2>
+                <div class="section-underline"></div>
+                <p class="section-lead">สนใจติดต่อสอบถามข้อมูลเพิ่มเติม แลกเปลี่ยนความรู้ หรือติดต่อเพื่อการศึกษาและร่วมงาน</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Left: Contact Details Card -->
+                <div class="contact-info-card glow-card">
+                    <div class="info-card-header">
+                        <div class="icon-bubble"><i class="fas fa-address-card"></i></div>
+                        <div>
+                            <h3 class="info-title">ข้อมูลติดต่อส่วนตัว</h3>
+                            <p class="info-subtitle">พร้อมตอบกลับทุกข้อความเสมอครับ</p>
+                        </div>
+                    </div>
+
+                    <p class="contact-intro-text">
+                        หากอาจารย์ ผู้ประเมิน หรือผู้ที่สนใจต้องการสอบถามเกี่ยวกับผลงาน พอร์ตโฟลิโอ TCAS หรือมีคำแนะนำในการพัฒนา สามารถติดต่อผมได้โดยตรงผ่านช่องทางเหล่านี้ครับ
+                    </p>
+
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <span class="contact-label">อีเมลทางการ (Student Email)</span>
+                                <a href="mailto:6829010001@prcs.ac.th" class="contact-value">6829010001@prcs.ac.th</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fab fa-github"></i></div>
+                            <div class="contact-text">
+                                <span class="contact-label">GitHub Repository</span>
+                                <a href="https://github.com/Aombank" target="_blank" rel="noopener noreferrer" class="contact-value">github.com/Aombank</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <span class="contact-label">ที่อยู่ / สถานศึกษา</span>
+                                <span class="contact-value">ประเทศไทย (Thailand) • สังกัด PRCS</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-user-clock"></i></div>
+                            <div class="contact-text">
+                                <span class="contact-label">สถานะปัจจุบัน</span>
+                                <span class="contact-value status-active"><i class="fas fa-circle"></i> พร้อมเรียนรู้ & รับโอกาสใหม่</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="contact-social-bar">
+                        <a href="https://github.com/Aombank" target="_blank" rel="noopener noreferrer" class="social-circle" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:6829010001@prcs.ac.th" class="social-circle" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="javascript:void(0)" class="social-circle" title="Discord: Aombank"><i class="fab fa-discord"></i></a>
+                        <a href="javascript:void(0)" class="social-circle" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Contact Form -->
+                <div class="contact-form-container glow-card">
+                    <div class="form-header">
+                        <h3 class="form-title"><i class="fas fa-paper-plane text-primary"></i> ส่งข้อความติดต่อกลับ</h3>
+                        <p class="form-subtitle">กรอกข้อมูลลงในฟอร์มด้านล่าง ระบบจะส่งข้อความถึงผมทันที</p>
+                    </div>
+
+                    <form id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name"><i class="fas fa-user"></i> ชื่อ-นามสกุล <span class="req">*</span></label>
+                                <input type="text" id="form-name" name="name" placeholder="เช่น อาจารย์สมชาย หรือ คุณวิชัย" required>
+                                <span class="field-error" id="name-error">กรุณากรอกชื่อของคุณ</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email"><i class="fas fa-at"></i> อีเมลติดต่อ <span class="req">*</span></label>
+                                <input type="email" id="form-email" name="email" placeholder="name@example.com" required>
+                                <span class="field-error" id="email-error">กรุณากรอกอีเมลที่ถูกต้อง</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-subject"><i class="fas fa-tag"></i> หัวข้อการติดต่อ <span class="req">*</span></label>
+                                <select id="form-subject" name="subject" required>
+                                    <option value="" disabled selected>-- เลือกหัวข้อการติดต่อ --</option>
+                                    <option value="tcas">สอบถามข้อมูลผลงาน / การสมัครเรียน (TCAS)</option>
+                                    <option value="internship">โอกาสการฝึกงาน / ร่วมงาน</option>
+                                    <option value="project">แลกเปลี่ยนข้อมูลโปรเจกต์ (C# / IoT)</option>
+                                    <option value="general">ทักทายและให้คำแนะนำทั่วไป</option>
+                                </select>
+                                <span class="field-error" id="subject-error">กรุณาเลือกหัวข้อการติดต่อ</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-phone"><i class="fas fa-phone-alt"></i> เบอร์โทรศัพท์ (ถ้ามี)</label>
+                                <input type="tel" id="form-phone" name="phone" placeholder="08x-xxx-xxxx">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message"><i class="fas fa-comment-dots"></i> ข้อความของคุณ <span class="req">*</span></label>
+                            <textarea id="form-message" name="message" rows="5" placeholder="พิมพ์ข้อความ คำติชม หรือรายละเอียดที่ต้องการติดต่อที่นี่..." required></textarea>
+                            <span class="field-error" id="message-error">กรุณาระบุข้อความอย่างน้อย 10 ตัวอักษร</span>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="btn btn-primary btn-block btn-lg">
+                            <span class="btn-text">ส่งข้อความติดต่อกลับ</span>
+                            <i class="fas fa-arrow-right btn-icon"></i>
+                        </button>
+                    </form>
+
+                    <!-- Feedback Alert (Toast) -->
+                    <div id="form-toast" class="form-toast hidden">
+                        <div class="toast-content">
+                            <i class="fas fa-check-circle toast-icon"></i>
+                            <div class="toast-text">
+                                <strong id="toast-title">ส่งข้อความสำเร็จแล้ว!</strong>
+                                <p id="toast-msg">ขอบคุณสำหรับข้อความครับ ผมได้รับข้อมูลเรียบร้อยแล้วและจะติดต่อกลับโดยเร็ว</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="logo">
+                    <span class="logo-accent">&lt;</span>Aombank<span class="logo-accent">/&gt;</span>
+                </a>
+                <p class="footer-tagline">Online Portfolio สำหรับสมัครเรียน TCAS & สมัครงาน | งานชิ้นที่ 1</p>
+            </div>
+            
+            <p class="footer-copy">
+                &copy; 2026 ณัฐพงษ์ ปัดทุมมา (ออมแบงค์) • พัฒนาด้วยความมุ่งมั่นและความใส่ใจ
+            </p>
+
+            <div class="footer-actions">
+                <a href="#hero" class="back-to-top" title="กลับขึ้นด้านบน">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close-btn" aria-label="ปิดหน้าต่าง">&times;</button>
+            <div class="modal-header">
+                <span class="badge" id="modal-category">PROJECT CATEGORY</span>
+                <h2 id="modal-title">Project Title</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-visual" id="modal-visual">
+                    <i class="fas fa-laptop-code" id="modal-icon"></i>
+                </div>
+                <div class="modal-section">
+                    <h4><i class="fas fa-info-circle"></i> วัตถุประสงค์และภาพรวม</h4>
+                    <p id="modal-overview">รายละเอียดภาพรวมของโครงงาน</p>
+                </div>
+                <div class="modal-section">
+                    <h4><i class="fas fa-cogs"></i> ฟังก์ชันการทำงานหลัก (Key Features)</h4>
+                    <ul id="modal-features" class="modal-features-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h4><i class="fas fa-layer-group"></i> เทคโนโลยีและเครื่องมือที่ใช้</h4>
+                    <div id="modal-tags" class="tech-stack-tags">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close-action">ปิดหน้าต่าง</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TCAS Resume Modal -->
+    <div id="resume-modal" class="modal-backdrop">
+        <div class="modal-card resume-modal-card">
+            <button class="modal-close" id="resume-close-btn" aria-label="ปิดหน้าต่าง">&times;</button>
+            <div class="resume-modal-header">
+                <div class="resume-header-info">
+                    <h2>นายณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</h2>
+                    <p class="resume-sub">แฟ้มประวัติส่วนตัว & สรุปผลงานสำหรับยื่นเข้าศึกษาต่อ (TCAS Portfolio Summary)</p>
+                </div>
+                <button class="btn btn-sm btn-primary" onclick="window.print()">
+                    <i class="fas fa-print"></i> พิมพ์ / บันทึก PDF
+                </button>
+            </div>
+            <div class="resume-modal-content">
+                <div class="resume-section">
+                    <h3><i class="fas fa-user-circle"></i> ข้อมูลส่วนตัว (Personal Information)</h3>
+                    <div class="resume-grid-2">
+                        <div><strong>ชื่อ-นามสกุล:</strong> นายณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</div>
+                        <div><strong>อายุ:</strong> 16 ปี</div>
+                        <div><strong>อีเมล:</strong> 6829010001@prcs.ac.th</div>
+                        <div><strong>GitHub:</strong> github.com/Aombank</div>
+                        <div><strong>เป้าหมายคณะ:</strong> คณะวิศวกรรมศาสตร์ / คณะเทคโนโลยีสารสนเทศ</div>
+                        <div><strong>สาขาที่สนใจ:</strong> วิศวกรรมคอมพิวเตอร์ (Computer Engineering) / วิทยาการคอมพิวเตอร์</div>
+                    </div>
+                </div>
+
+                <div class="resume-section">
+                    <h3><i class="fas fa-star"></i> ทักษะเด่น (Core Strengths)</h3>
+                    <div class="resume-strengths-tags">
+                        <span>C# Windows Forms</span>
+                        <span>Arduino & IoT Microcontrollers</span>
+                        <span>HTML5 / CSS3 / JavaScript</span>
+                        <span>Serial Communication</span>
+                        <span>Sensor Integration</span>
+                        <span>Visual Studio</span>
+                        <span>Digital Art & Media Streaming</span>
+                    </div>
+                </div>
+
+                <div class="resume-section">
+                    <h3><i class="fas fa-trophy"></i> ผลงานและโครงงานที่โดดเด่น (Notable Projects)</h3>
+                    <ol class="resume-projects-list">
+                        <li>
+                            <strong>Temperature Monitoring Dashboard (C# WinForms):</strong> 
+                            ระบบตรวจวัดอุณหภูมิและประมวลผลข้อมูลผ่าน Serial Port แสดงผลกราฟิกและสถิติแบบเรียลไทม์
+                        </li>
+                        <li>
+                            <strong>Smart IoT Sensor Controller (Arduino & C++):</strong> 
+                            การประกอบวงจรและเขียนโปรแกรมควบคุมเซนเซอร์วัดค่าสภาพแวดล้อม ส่งข้อมูลสู่คอมพิวเตอร์
+                        </li>
+                        <li>
+                            <strong>Online Portfolio & TCAS Showcase (Web Frontend):</strong> 
+                            เว็บไซต์แฟ้มสะสมผลงานส่วนตัว รองรับหน้าจอทุกขนาด พร้อมลูกเล่น Skills Bar และแบบฟอร์มติดต่อกลับ
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary resume-close-action">ปิดหน้าต่าง</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="index.js"></script>
+</body>
+</html>
