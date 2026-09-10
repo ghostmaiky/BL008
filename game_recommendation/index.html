@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEPULSE — ศูนย์รวมแนะนำเกมน่าเล่น & รีวิวเกมชั้นนำ | งานชิ้นที่ 2</title>
+    
+    <!-- Google Fonts: Prompt, Kanit, Chakra Petch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700;800&family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ====================================================================
+         STUDENT ASSIGNMENT BANNER (แถบข้อมูลส่งงานอาจารย์ ชิ้นที่ 2)
+         ==================================================================== -->
+    <aside class="assignment-bar">
+        <div class="assignment-info">
+            <span class="badge-tag"><i class="fas fa-tasks"></i> งานชิ้นที่ 2</span>
+            <span class="assignment-student">
+                วิชา: <strong>21901-2013-69 การออกแบบและพัฒนาเว็บไซต์</strong> (ครูตะวัน ดอกบัว)
+            </span>
+            <span style="color: rgba(255,255,255,0.3);">|</span>
+            <span class="assignment-student">
+                ผู้จัดทำ: <strong>นายณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</strong> • รหัส: <strong>6829010001</strong> • สาขา: <strong>เกมและแอนิเมชัน</strong>
+            </span>
+        </div>
+        <div class="assignment-actions">
+            <button class="btn-mini" onclick="openSubmissionModal()">
+                <i class="fas fa-file-alt"></i> ดูข้อมูลการออกแบบ
+            </button>
+            <button class="btn-mini" onclick="printSubmission()">
+                <i class="fas fa-print"></i> พิมพ์ / บันทึก PDF
+            </button>
+        </div>
+    </aside>
+
+    <!-- ====================================================================
+         NAVIGATION BAR
+         ==================================================================== -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="#featured" class="logo">
+                    <i class="fas fa-gamepad logo-icon"></i>
+                    <div class="logo-text">
+                        <span class="logo-title">GAMEPULSE</span>
+                        <span class="logo-sub">ศูนย์รวมแนะนำเกมน่าเล่น</span>
+                    </div>
+                </a>
+
+                <!-- Search Input -->
+                <div class="nav-search">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-games" class="search-input" placeholder="ค้นหาเกม, แนวเกม, สเปกคอม...">
+                </div>
+
+                <!-- Nav Links -->
+                <ul class="nav-links">
+                    <li><a href="#featured" class="nav-link active"><i class="fas fa-fire"></i> หน้าแรก</a></li>
+                    <li><a href="#games-section" class="nav-link"><i class="fas fa-th-large"></i> หมวดหมู่เกม</a></li>
+                    <li><a href="#highlights" class="nav-link"><i class="fas fa-star"></i> แนะนำเด่น</a></li>
+                    <li><a href="#concept-section" class="nav-link"><i class="fas fa-lightbulb"></i> แนวคิดเว็บ</a></li>
+                    <li>
+                        <button class="btn-primary nav-cta" onclick="openSubmissionModal()">
+                            <i class="fas fa-paper-plane"></i> สรุปส่งงาน
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ====================================================================
+         MAIN CONTENT AREA
+         ==================================================================== -->
+    <main class="main-container">
+
+        <!-- HERO / SPOTLIGHT (แนะนำเกมยอดเยี่ยมประจำสัปดาห์) -->
+        <section id="featured" class="hero-spotlight">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80" alt="Black Myth Wukong" class="hero-banner-img">
+            <div class="hero-overlay">
+                <div class="spotlight-badge-row">
+                    <span class="badge-goty"><i class="fas fa-trophy"></i> GAME OF THE MONTH</span>
+                    <span class="badge-genre">Action RPG</span>
+                    <span class="badge-genre">Unreal Engine 5</span>
+                </div>
+                
+                <h1 class="hero-title">Black Myth: Wukong</h1>
+                
+                <p class="hero-desc">
+                    มหากาพย์เกมไซอิ๋วฟอร์มยักษ์ระดับมาสเตอร์พีซ กราฟิกตระการตาสวยงามที่สุดแห่งปี การต่อสู้ดุเดือดเร้าใจ พร้อมการแปลงกาย 72 ท่าสุดอลังการ ที่เกมเมอร์ทุกคนต้องลองเล่น!
+                </p>
+
+                <div class="hero-meta-row">
+                    <div class="rating-score">
+                        <span class="score-box">9.8</span>
+                        <div>
+                            <div class="stars-container">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span style="font-size: 0.8rem; color: #94a3b8;">คะแนนรีวิวจากบรรณาธิการ</span>
+                        </div>
+                    </div>
+
+                    <div class="platform-icons">
+                        <span>เล่นได้บน:</span>
+                        <i class="fab fa-steam" title="Steam"></i>
+                        <i class="fab fa-playstation" title="PlayStation 5"></i>
+                        <i class="fas fa-desktop" title="PC Windows"></i>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="openGameModal('wukong')">
+                        <i class="fas fa-book-reader"></i> อ่านรีวิวฉบับเต็ม & สเปกคอม
+                    </button>
+                    <a href="#games-section" class="btn-glass">
+                        <i class="fas fa-arrow-down"></i> ดูเกมแนะนำอื่นๆ ทั้งหมด
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS SUMMARY ROW -->
+        <section id="highlights" class="highlights-row">
+            <div class="highlight-box">
+                <div class="highlight-icon"><i class="fas fa-bolt"></i></div>
+                <div class="highlight-text">
+                    <h4>อัปเดตเกมใหม่ 2026</h4>
+                    <p>รวบรวมเกมน่าเล่นที่เพิ่งเปิดตัว พร้อมรีวิวจุดเด่นและสเปกคอมอย่างละเอียด</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <div class="highlight-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="highlight-text">
+                    <h4>ตรวจสอบสเปกคอมพิวเตอร์</h4>
+                    <p>แสดงความต้องการของระบบ ทั้งขั้นต่ำและขั้นแนะนำ ช่วยให้ตัดสินใจก่อนดาวน์โหลด</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <div class="highlight-icon"><i class="fas fa-users"></i></div>
+                <div class="highlight-text">
+                    <h4>เกมเล่นกับเพื่อน (Co-op)</h4>
+                    <p>คัดสรรเกมมันส์ๆ แนวปาร์ตี้ เล่นเป็นทีม และเกมเอาชีวิตรอดที่เหมาะสำหรับแก๊งเพื่อน</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAMES GRID SECTION -->
+        <section id="games-section">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <span class="section-label"><i class="fas fa-gamepad"></i> CURATED RECOMMENDATIONS</span>
+                    <h2 class="section-title">คลังเกมแนะนำน่าเล่นประจำปี</h2>
+                </div>
+
+                <!-- Tabs Filter -->
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-filter="all">ทั้งหมด (All)</button>
+                    <button class="tab-btn" data-filter="trending"><i class="fas fa-fire"></i> ยอดนิยม</button>
+                    <button class="tab-btn" data-filter="pc"><i class="fas fa-desktop"></i> เกม PC</button>
+                    <button class="tab-btn" data-filter="coop"><i class="fas fa-user-friends"></i> เล่นกับเพื่อน</button>
+                    <button class="tab-btn" data-filter="mobile"><i class="fas fa-mobile-alt"></i> เกมมือถือ</button>
+                    <button class="tab-btn" data-filter="free"><i class="fas fa-gift"></i> เกมฟรี</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Games Grid (Populated by JavaScript) -->
+            <div id="games-grid" class="games-grid">
+                <!-- Javascript will render cards here -->
+            </div>
+        </section>
+
+        <!-- ================================================================
+             CONCEPT & DESIGN RATIONALE (คำอธิบายการออกแบบตามโจทย์งานชิ้นที่ 2)
+             ================================================================ -->
+        <section id="concept-section" class="design-rationale">
+            <div class="rationale-header">
+                <div class="highlight-icon" style="background: linear-gradient(135deg, rgba(0,240,255,0.3), rgba(168,85,247,0.3));">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div>
+                    <h3 class="rationale-title">เอกสารแนวคิดการออกแบบหน้าแรก (Design Rationale — งานชิ้นที่ 2)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        วิชา: 21901-2013-69 การออกแบบและพัฒนาเว็บไซต์ • ครูผู้สอน: ครูตะวัน ดอกบัว
+                    </p>
+                </div>
+            </div>
+
+            <div class="rationale-grid">
+                <div class="rationale-card">
+                    <h5><i class="fas fa-bullseye"></i> วัตถุประสงค์ของเว็บไซต์ (Objective)</h5>
+                    <p>
+                        ต้องการสร้างเว็บไซต์ <strong>GAMEPULSE</strong> เพื่อเป็นแหล่งรวมข้อมูลแนะนำเกมน่าเล่น รีวิวเกมทั้งบน PC, คอนโซล และมือถือ มีระบบเช็กสเปกคอมพิวเตอร์ และคะแนนรีวิวที่เชื่อถือได้ ตอบโจทย์ผู้เล่นเกมที่กำลังมองหาเกมน่าเล่น
+                    </p>
+                </div>
+
+                <div class="rationale-card">
+                    <h5><i class="fas fa-palette"></i> ทฤษฎีสีและธีม (Color & Theme)</h5>
+                    <p>
+                        ใช้โทนสี <strong>Dark Cyber Gamer</strong> (พื้นหลังดำ #070913 เสริมด้วยแสงนีออน Cyan #00f0ff และ Purple #a855f7) เพื่อดึงดูดสายตาของกลุ่มเป้าหมายเกมเมอร์ และใช้สไตล์ <strong>Glassmorphism</strong> ดูทันสมัยเหมือนสตูดิโอเกมระดับโลก
+                    </p>
+                </div>
+
+                <div class="rationale-card">
+                    <h5><i class="fas fa-sitemap"></i> โครงสร้างหน้าแรก (Homepage Layout)</h5>
+                    <p>
+                        จัดวางแบบ <strong>Hero Spotlight</strong> ด้านบนเพื่อสร้างความน่าสนใจ ตามด้วย <strong>Category Filter Tabs</strong> ที่กดเลือกหมวดหมู่ได้ทันที มีแถบค้นหา (Instant Search) และการ์ดเกมที่กดดูสเปกและรีวิวใน Modal ได้โดยไม่ต้องเปลี่ยนหน้า
+                    </p>
+                </div>
+
+                <div class="rationale-card">
+                    <h5><i class="fas fa-code"></i> เทคโนโลยีที่ใช้ในการพัฒนา (Tech Stack)</h5>
+                    <p>
+                        ใช้ <strong>Semantic HTML5</strong> เพื่อโครงสร้างที่ถูกต้อง, <strong>Modern CSS3 Flexbox/Grid</strong> สำหรับรองรับหน้าจอมือถือ (Responsive), และ <strong>Vanilla JavaScript</strong> สำหรับระบบค้นหาและกรองข้อมูลแบบเรียลไทม์
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3><i class="fas fa-gamepad" style="color: var(--primary);"></i> GAMEPULSE</h3>
+                <p>
+                    เว็บไซต์ต้นแบบแนะนำเกมและรีวิวเกมน่าเล่น สร้างขึ้นเพื่อเป็นงานส่งในรายวิชาการออกแบบและพัฒนาเว็บไซต์ สาขาวิชาเกมและแอนิเมชัน
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>หมวดหมู่เกมยอดนิยม</h4>
+                <ul class="footer-links">
+                    <li><a href="#games-section">เกมแนว Action RPG</a></li>
+                    <li><a href="#games-section">เกม Open World</a></li>
+                    <li><a href="#games-section">เกมยิงปืน FPS / E-Sports</a></li>
+                    <li><a href="#games-section">เกมเล่นกับเพื่อน Co-op</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ข้อมูลผู้จัดทำ (Student Info)</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.4rem;">
+                    <strong>นายณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</strong>
+                </p>
+                <p style="font-size: 0.85rem; color: #94a3b8;">
+                    รหัสนักศึกษา: 6829010001<br>
+                    สาขา: เกมและแอนิเมชัน<br>
+                    ครูผู้สอน: ครูตะวัน ดอกบัว
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 GAMEPULSE — งานชิ้นที่ 2 การออกแบบเว็บหน้าแรก</span>
+            <span>รายวิชา 21901-2013-69 การออกแบบและพัฒนาเว็บไซต์</span>
+        </div>
+    </footer>
+
+    <!-- ====================================================================
+         MODAL 1: GAME DETAIL & SPECS MODAL
+         ==================================================================== -->
+    <div id="game-detail-modal" class="modal-backdrop">
+        <div class="game-modal">
+            <button class="modal-close-btn" onclick="closeAllModals()"><i class="fas fa-times"></i></button>
+            <div id="modal-dynamic-content">
+                <!-- Javascript will inject content here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         MODAL 2: SUBMISSION INFORMATION MODAL (ส่งงานชิ้นที่ 2)
+         ==================================================================== -->
+    <div id="submission-modal" class="modal-backdrop">
+        <div class="submission-card">
+            <button class="modal-close-btn" onclick="closeAllModals()"><i class="fas fa-times"></i></button>
+            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem;">
+                <span class="badge-tag">งานชิ้นที่ 2</span>
+                <h3 style="color: #fff; font-family: var(--font-head); font-size: 1.3rem;">ข้อมูลการส่งงานอาจารย์</h3>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 1.2rem; margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.8;">
+                <p><strong>วิชา:</strong> 21901-2013-69 การออกแบบและพัฒนาเว็บไซต์</p>
+                <p><strong>โจทย์งาน:</strong> ให้ออกแบบเว็บหน้าแรก ของเว็บที่คิดว่าจะทำ (คะแนน: 5 คะแนน)</p>
+                <p><strong>ชื่อแนวคิดเว็บ:</strong> GAMEPULSE — เว็บไซต์แนะนำเกมน่าเล่น & รีวิวเกม</p>
+                <p><strong>ผู้จัดทำ:</strong> นายณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</p>
+                <p><strong>รหัสนักศึกษา:</strong> 6829010001</p>
+                <p><strong>สาขาวิชา:</strong> เกมและแอนิเมชัน (Game & Animation)</p>
+                <p><strong>อาจารย์ผู้สอน:</strong> ครูตะวัน ดอกบัว (Tawan Dokbua)</p>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                <button class="btn-glass" onclick="closeAllModals()">ปิด</button>
+                <button class="btn-primary" onclick="printSubmission()">
+                    <i class="fas fa-print"></i> พิมพ์หน้านี้เป็น PDF ส่งครู
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
