@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>งานชิ้นที่ 2 — แบบออกแบบเว็บไซต์ | ณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Prompt:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #0a0d16;
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at top right, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom left, rgba(6, 182, 212, 0.25) 0%, transparent 50%),
+                        #0a0d16;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 100%),
+                radial-gradient(1px 1px at 75% 15%, rgba(255,255,255,0.1) 0%, transparent 100%),
+                radial-gradient(1px 1px at 50% 70%, rgba(255,255,255,0.12) 0%, transparent 100%),
+                radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,0.08) 0%, transparent 100%);
+            background-size: 300px 300px, 200px 200px, 400px 400px, 250px 250px;
+            pointer-events: none;
+        }
+
+        .cover-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.4rem;
+            border-radius: 999px;
+            background: rgba(147, 51, 234, 0.2);
+            border: 1px solid rgba(147, 51, 234, 0.5);
+            color: #d8b4fe;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.25);
+        }
+
+        .cover-title {
+            font-family: 'Prompt', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 50%, #4ade80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cover-subject {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .cover-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 3rem;
+        }
+
+        .info-chip {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            text-align: left;
+            backdrop-filter: blur(8px);
+        }
+
+        .chip-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .chip-label i { color: #818cf8; }
+
+        .chip-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .divider {
+            width: 100%;
+            max-width: 750px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.5), rgba(6, 182, 212, 0.5), transparent);
+            margin: 2rem 0;
+        }
+
+        /* Design Concept Section */
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 1rem;
+            border-radius: 999px;
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid rgba(6, 182, 212, 0.35);
+            color: #67e8f9;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-family: 'Prompt', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-underline {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #818cf8, #22d3ee);
+            border-radius: 999px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Concept Box */
+        .concept-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, #818cf8, #22d3ee);
+        }
+
+        .concept-box h3 {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #e2e8f0;
+        }
+
+        .concept-box h3 i { color: #818cf8; }
+
+        .concept-box p {
+            color: #94a3b8;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .concept-box p strong { color: #e2e8f0; }
+
+        /* Feature List */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(129, 140, 248, 0.4);
+            background: rgba(129, 140, 248, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.25), rgba(34, 211, 238, 0.15));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #818cf8;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #e2e8f0;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Mockup Image */
+        .mockup-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(129, 140, 248, 0.25);
+            box-shadow:
+                0 0 0 1px rgba(129, 140, 248, 0.1),
+                0 30px 80px -10px rgba(0, 0, 0, 0.7),
+                0 0 60px rgba(129, 140, 248, 0.15);
+            margin-bottom: 3rem;
+        }
+
+        .mockup-wrapper img {
+            width: 100%;
+            display: block;
+        }
+
+        .mockup-glow {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 80%, rgba(10, 13, 22, 0.3) 100%);
+            pointer-events: none;
+        }
+
+        .mockup-label {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(129, 140, 248, 0.9);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Color Palette */
+        .palette-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .swatch-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        .swatch-name {
+            font-size: 0.78rem;
+            color: #64748b;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .swatch-hex {
+            font-size: 0.72rem;
+            color: #475569;
+            font-family: monospace;
+        }
+
+        /* Tech Stack Tags */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(129, 140, 248, 0.15);
+            border: 1px solid rgba(129, 140, 248, 0.3);
+            color: #a5b4fc;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        /* Footer / Signature */
+        .signature-footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .signature-footer strong { color: #818cf8; }
+
+        /* Print Styles */
+        @media print {
+            body { background: #fff; color: #000; }
+            .cover-page { background: #fff; color: #000; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <span class="cover-badge">
+            <i class="fas fa-book-open"></i>
+            21901-2013-69 การออกแบบและพัฒนาเว็บไซต์ | งานชิ้นที่ 2
+        </span>
+
+        <h1 class="cover-title">แบบออกแบบเว็บไซต์<br>ที่คิดไว้ล่วงหน้า</h1>
+
+        <p class="cover-subject">
+            <i class="fas fa-gamepad"></i>
+            แนวคิด: <strong style="color:#a5b4fc">GameVault</strong> — เว็บไซต์แสดงผลงานเกมและ Online Portfolio สาขาเกมและแอนิเมชัน
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="cover-info-grid">
+            <div class="info-chip">
+                <div class="chip-label"><i class="fas fa-user"></i> ชื่อ-นามสกุล</div>
+                <div class="chip-value">ณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</div>
+            </div>
+            <div class="info-chip">
+                <div class="chip-label"><i class="fas fa-id-card"></i> รหัสนักศึกษา</div>
+                <div class="chip-value">6829010001</div>
+            </div>
+            <div class="info-chip">
+                <div class="chip-label"><i class="fas fa-graduation-cap"></i> สาขา</div>
+                <div class="chip-value">เกมและแอนิเมชัน</div>
+            </div>
+            <div class="info-chip">
+                <div class="chip-label"><i class="fas fa-chalkboard-teacher"></i> อาจารย์ผู้สอน</div>
+                <div class="chip-value">ครูตะวัน ดอกบัว</div>
+            </div>
+            <div class="info-chip">
+                <div class="chip-label"><i class="fas fa-calendar-alt"></i> วิชา</div>
+                <div class="chip-value">21901-2013-69 การออกแบบและพัฒนาเว็บไซต์</div>
+            </div>
+            <div class="info-chip">
+                <div class="chip-label"><i class="fas fa-tasks"></i> งานชิ้นที่</div>
+                <div class="chip-value">2 (Due Aug 10)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1: Concept -->
+    <div class="section">
+        <span class="section-badge"><i class="fas fa-lightbulb"></i> แนวคิดและแรงบันดาลใจ</span>
+        <h2 class="section-title">แนวคิดหลักของเว็บที่คิดไว้</h2>
+        <div class="section-underline"></div>
+
+        <div class="concept-box">
+            <h3><i class="fas fa-gamepad"></i> GameVault — เว็บไซต์แสดงผลงานเกม & Online Portfolio</h3>
+            <p>
+                ผมต้องการออกแบบเว็บไซต์ชื่อ <strong>"GameVault"</strong> เพื่อเป็นแพลตฟอร์มแสดงผลงานด้านเกมและแอนิเมชันของนักศึกษาสาขาเกมและแอนิเมชัน โดยเฉพาะสำหรับตัวเอง (ออมแบงค์) สามารถใช้เป็น Online Portfolio นำเสนอผลงาน Game Design, 2D/3D Animation และ Digital Art ให้อาจารย์และนายจ้างในวงการเกมดูได้
+            </p>
+            <br>
+            <p>
+                ออกแบบในสไตล์ <strong>Dark Cyber Gaming</strong> ตามรสนิยมของคนเล่นเกม มีเอฟเฟกต์แสงนีออนสีม่วงและฟ้า (Purple-Cyan) บนพื้นหลังสีดำเข้ม ให้ความรู้สึกทันสมัยและระดับมืออาชีพ เหมือนเว็บไซต์ Studio เกม AAA ระดับสากล
+            </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-home"></i></div>
+                <h4>หน้าแรก (Hero Section)</h4>
+                <p>แสดงชื่อเว็บ แนะนำตัว และภาพเกม 3D ที่ตื่นตาตื่นใจ พร้อมปุ่ม "ชมผลงาน"</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-th-large"></i></div>
+                <h4>ผลงานที่เคยทำ (Featured Games)</h4>
+                <p>การ์ดผลงานเกม/แอนิเมชัน พร้อมชื่อเกม หมวดหมู่ (Action/RPG/Strategy) และปุ่มดู</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                <h4>ทักษะ (Skills Bar)</h4>
+                <p>Skills Bar แสดงระดับความสามารถด้าน Game Design, 2D Animation, Unity, Pixel Art</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-paper-plane"></i></div>
+                <h4>ฟอร์มติดต่อ (Contact Form)</h4>
+                <p>ฟอร์มส่งข้อความ ช่องทางโซเชียล Discord, Twitter, YouTube, Twitch</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-moon"></i></div>
+                <h4>Dark Theme</h4>
+                <p>ธีมมืดสีดำ #0a0d16 เอฟเฟกต์ Glassmorphism และแสงนีออน Glow รอบการ์ด</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h4>Responsive Design</h4>
+                <p>รองรับทุกขนาดหน้าจอ ทั้งโทรศัพท์ แท็บเล็ต และคอมพิวเตอร์</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Mockup Design -->
+    <div class="section" style="padding-top: 0;">
+        <span class="section-badge"><i class="fas fa-desktop"></i> ภาพออกแบบหน้าเว็บ (Design Mockup)</span>
+        <h2 class="section-title">แบบออกแบบหน้าเว็บ GameVault</h2>
+        <div class="section-underline"></div>
+
+        <div class="mockup-wrapper">
+            <img src="game_design_mockup.jpg" alt="GameVault Website Design Mockup — งานชิ้นที่ 2">
+            <div class="mockup-glow"></div>
+            <span class="mockup-label">Design Mockup v1.0</span>
+        </div>
+
+        <!-- Color Palette -->
+        <span class="section-badge"><i class="fas fa-palette"></i> จานสีที่ใช้ในการออกแบบ</span>
+        <h2 class="section-title" style="font-size: 1.6rem; margin-top: 0.5rem;">Color Palette</h2>
+        <div class="section-underline"></div>
+
+        <div class="palette-row">
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: #0a0d16;"></div>
+                <span class="swatch-name">พื้นหลังหลัก<br>Background</span>
+                <span class="swatch-hex">#0a0d16</span>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: #121826;"></div>
+                <span class="swatch-name">พื้นหลังการ์ด<br>Card Surface</span>
+                <span class="swatch-hex">#121826</span>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: #6366f1; box-shadow: 0 0 20px rgba(99,102,241,0.6);"></div>
+                <span class="swatch-name">สีหลัก<br>Primary</span>
+                <span class="swatch-hex">#6366f1</span>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: #9333ea; box-shadow: 0 0 20px rgba(147,51,234,0.5);"></div>
+                <span class="swatch-name">สีม่วง<br>Purple Glow</span>
+                <span class="swatch-hex">#9333ea</span>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: #06b6d4; box-shadow: 0 0 20px rgba(6,182,212,0.5);"></div>
+                <span class="swatch-name">สีฟ้านีออน<br>Cyan Neon</span>
+                <span class="swatch-hex">#06b6d4</span>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: #10b981; box-shadow: 0 0 20px rgba(16,185,129,0.4);"></div>
+                <span class="swatch-name">สีเขียว<br>Accent</span>
+                <span class="swatch-hex">#10b981</span>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: #f8fafc;"></div>
+                <span class="swatch-name">ตัวอักษรหลัก<br>Text Primary</span>
+                <span class="swatch-hex">#f8fafc</span>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: #94a3b8;"></div>
+                <span class="swatch-name">ตัวอักษรรอง<br>Text Secondary</span>
+                <span class="swatch-hex">#94a3b8</span>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <span class="section-badge"><i class="fas fa-code"></i> เทคโนโลยีที่วางแผนจะใช้</span>
+        <h2 class="section-title" style="font-size: 1.6rem; margin-top: 0.5rem;">Tech Stack</h2>
+        <div class="section-underline"></div>
+
+        <div class="tech-tags">
+            <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3 Modern</span>
+            <span class="tech-tag"><i class="fab fa-js"></i> Vanilla JavaScript</span>
+            <span class="tech-tag"><i class="fas fa-layer-group"></i> Glassmorphism Design</span>
+            <span class="tech-tag"><i class="fas fa-mobile-alt"></i> Responsive Layout</span>
+            <span class="tech-tag"><i class="fab fa-font-awesome"></i> Font Awesome Icons</span>
+            <span class="tech-tag"><i class="fas fa-font"></i> Prompt & Kanit Fonts</span>
+            <span class="tech-tag"><i class="fab fa-github"></i> GitHub Pages (Deploy)</span>
+        </div>
+    </div>
+
+    <!-- Signature Footer -->
+    <div class="signature-footer">
+        <p><strong>ณัฐพงษ์ ปัดทุมมา (ออมแบงค์)</strong> — รหัสนักศึกษา 6829010001</p>
+        <p style="margin-top: 0.3rem;">สาขาเกมและแอนิเมชัน | วิชา 21901-2013-69 การออกแบบและพัฒนาเว็บไซต์</p>
+        <p style="margin-top: 0.3rem; color: #334155;">งานชิ้นที่ 2 — แบบออกแบบเว็บที่คิดไว้ | 2026</p>
+    </div>
+
+</body>
+</html>
